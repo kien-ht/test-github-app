@@ -13,7 +13,7 @@
     "build:ui": "vite build --config src/ui/vite.config.js",
     "build:server": "tsc",
     "build": "run-s build:*",
-    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --runInBand",
+    "test": "cpx ./image-demo.png ./visual-test/diff",
     "type-check:ui": "vue-tsc --noEmit --project src/ui/tsconfig.json",
     "type-check:rest": "tsc --noEmit",
     "type-check": "run-s -c type-check:*"
@@ -56,6 +56,7 @@
     "@vitejs/plugin-vue": "^4.2.3",
     "@vue/eslint-config-prettier": "^8.0.0",
     "@vue/eslint-config-typescript": "^11.0.3",
+    "cpx": "^1.5.0",
     "cross-env": "^7.0.3",
     "element-plus": "^2.3.12",
     "eslint": "^8.49.0",
