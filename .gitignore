@@ -6,3 +6,6 @@
 # Cypress test run output
 /cypress/videos
 /cypress/screenshots
+/cypress-image-diff-screenshots/diff
+/cypress-image-diff-screenshots/comparison
+/cypress-image-diff-html-report

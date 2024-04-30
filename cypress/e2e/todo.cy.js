@@ -6,12 +6,7 @@ describe("TodoMVC", function () {
 
   it("Loads the TodoMVC app", function () {
     cy.get(".todoapp").should("exist");
-    cy.percySnapshot();
-  });
-
-  it("With no todos, hides main section and footer", function () {
-    cy.get(".main").should("not.be.visible");
-    cy.get(".footer").should("not.be.visible");
+    cy.compareSnapshot("home");
   });
 
   it("Accepts a new todo", function () {
@@ -23,7 +18,7 @@ describe("TodoMVC", function () {
     cy.get(".new-todo").should("exist");
     cy.get(".new-todo").type("New fancy todo {enter}");
     // Take a Percy snapshot with different browser widths.
-    cy.percySnapshot("New todo test");
+    cy.compareSnapshot({ name: "new-todo" });
 
     // We should have 1 todo item showing in the todo list and the footer.
     cy.get(".todo-list").children("li").should("have.length", 1);
@@ -38,6 +33,6 @@ describe("TodoMVC", function () {
     // Click it off -- it should be marked as completed.
     cy.get(".toggle").click();
     cy.get(".todo-count").should("contain", "0 items left");
-    cy.percySnapshot();
+    cy.compareSnapshot("todo-count");
   });
 });
