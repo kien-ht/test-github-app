@@ -1,7 +1,6 @@
 /*global app, $on */
 (function () {
   "use strict";
-
   
   function Todo(name) {
     this.storage = new app.Store(name);
