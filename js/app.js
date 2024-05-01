@@ -2,6 +2,7 @@
 (function () {
   "use strict";
 
+  
   function Todo(name) {
     this.storage = new app.Store(name);
     this.model = new app.Model(this.storage);
