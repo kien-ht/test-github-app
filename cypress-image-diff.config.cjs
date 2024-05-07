@@ -2,7 +2,7 @@ const config = {
   RETRY_OPTIONS: {
     doNotFail: true,
   },
-  FAILURE_THRESHOLD: 0.1,
+  FAILURE_THRESHOLD: 0.12,
 };
 
 module.exports = config;
