@@ -20,6 +20,6 @@ jobs:
       - name: Archive test results
         uses: actions/upload-artifact@v4
         with:
-          name: test-report
+          name: cypress-image-diff-html-report
           path: cypress-image-diff-html-report
           overwrite: true
