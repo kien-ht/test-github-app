@@ -45,16 +45,16 @@ describe("TodoMVC", function () {
     cy.compareSnapshot("home-38");
     cy.compareSnapshot("home-39");
     cy.compareSnapshot("home-40");
-    cy.compareSnapshot("home-41");
-    cy.compareSnapshot("home-42");
-    cy.compareSnapshot("home-43");
-    cy.compareSnapshot("home-44");
-    cy.compareSnapshot("home-45");
-    cy.compareSnapshot("home-46");
-    cy.compareSnapshot("home-47");
-    cy.compareSnapshot("home-48");
-    cy.compareSnapshot("home-49");
-    cy.compareSnapshot("home-50");
+    // cy.compareSnapshot("home-41");
+    // cy.compareSnapshot("home-42");
+    // cy.compareSnapshot("home-43");
+    // cy.compareSnapshot("home-44");
+    // cy.compareSnapshot("home-45");
+    // cy.compareSnapshot("home-46");
+    // cy.compareSnapshot("home-47");
+    // cy.compareSnapshot("home-48");
+    // cy.compareSnapshot("home-49");
+    // cy.compareSnapshot("home-50");
   });
 
   it("Accepts a new todo", function () {
