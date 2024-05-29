@@ -23,3 +23,4 @@ jobs:
           name: cypress-image-diff-html-report
           path: cypress-image-diff-html-report
           overwrite: true
+          zip: false
