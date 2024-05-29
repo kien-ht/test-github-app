@@ -3,7 +3,7 @@ const config = {
     doNotFail: true,
   },
   FAILURE_THRESHOLD: 0.1,
-  INLINE_ASSETS: true,
+  INLINE_ASSETS: false,
 };
 
 module.exports = config;
