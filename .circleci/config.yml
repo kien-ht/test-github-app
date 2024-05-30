@@ -29,6 +29,14 @@ jobs:
           path: cypress-image-diff-screenshots
       - store_artifacts:
           path: cypress-image-diff-html-report
+      - persist_to_workspace:
+          root: .
+          paths:
+            - cypress-image-diff-screenshots
+            - cypress-image-diff-html-report
+      - run:
+          name: Waiting for upload
+          command: echo "Uploaded successfully"
 
 workflows:
   version: 2
