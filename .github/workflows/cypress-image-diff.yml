@@ -21,6 +21,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: cypress-image-diff-html-report
-          path: cypress-image-diff-html-report
+          path: |
+            cypress-image-diff-html-report
+            cypress-image-diff-screenshots
           overwrite: true
-          zip: false
