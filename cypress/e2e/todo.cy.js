@@ -2,11 +2,10 @@ describe("TodoMVC", function () {
   beforeEach(function () {
     cy.visit("localhost:8000");
   });
-
   it("Loads the TodoMVC app", function () {
     cy.get(".todoapp").should("exist");
     cy.compareSnapshot("home");
-    // cy.compareSnapshot("home-2");
+    cy.compareSnapshot("home-2");
     // cy.compareSnapshot("home-3");
     // cy.compareSnapshot("home-4");
     // cy.compareSnapshot("home-5");
