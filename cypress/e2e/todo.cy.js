@@ -6,54 +6,54 @@ describe("TodoMVC", function () {
     cy.get(".todoapp").should("exist");
     cy.compareSnapshot("home");
     cy.compareSnapshot("home-2");
-    // cy.compareSnapshot("home-3");
-    // cy.compareSnapshot("home-4");
-    // cy.compareSnapshot("home-5");
-    // cy.compareSnapshot("home-6");
-    // cy.compareSnapshot("home-7");
-    // cy.compareSnapshot("home-8");
-    // cy.compareSnapshot("home-9");
-    // cy.compareSnapshot("home-10");
-    // cy.compareSnapshot("home-11");
-    // cy.compareSnapshot("home-12");
-    // cy.compareSnapshot("home-13");
-    // cy.compareSnapshot("home-14");
-    // cy.compareSnapshot("home-15");
-    // cy.compareSnapshot("home-16");
-    // cy.compareSnapshot("home-17");
-    // cy.compareSnapshot("home-18");
-    // cy.compareSnapshot("home-19");
-    // cy.compareSnapshot("home-20");
-    // cy.compareSnapshot("home-21");
-    // cy.compareSnapshot("home-22");
-    // cy.compareSnapshot("home-23");
-    // cy.compareSnapshot("home-24");
-    // cy.compareSnapshot("home-25");
-    // cy.compareSnapshot("home-26");
-    // cy.compareSnapshot("home-27");
-    // cy.compareSnapshot("home-28");
-    // cy.compareSnapshot("home-29");
-    // cy.compareSnapshot("home-30");
-    // cy.compareSnapshot("home-31");
-    // cy.compareSnapshot("home-32");
-    // cy.compareSnapshot("home-33");
-    // cy.compareSnapshot("home-34");
-    // cy.compareSnapshot("home-35");
-    // cy.compareSnapshot("home-36");
-    // cy.compareSnapshot("home-37");
-    // cy.compareSnapshot("home-38");
-    // cy.compareSnapshot("home-39");
-    // cy.compareSnapshot("home-40");
-    // cy.compareSnapshot("home-41");
-    // cy.compareSnapshot("home-42");
-    // cy.compareSnapshot("home-43");
-    // cy.compareSnapshot("home-44");
-    // cy.compareSnapshot("home-45");
-    // cy.compareSnapshot("home-46");
-    // cy.compareSnapshot("home-47");
-    // cy.compareSnapshot("home-48");
-    // cy.compareSnapshot("home-49");
-    // cy.compareSnapshot("home-50");
+    cy.compareSnapshot("home-3");
+    cy.compareSnapshot("home-4");
+    cy.compareSnapshot("home-5");
+    cy.compareSnapshot("home-6");
+    cy.compareSnapshot("home-7");
+    cy.compareSnapshot("home-8");
+    cy.compareSnapshot("home-9");
+    cy.compareSnapshot("home-10");
+    cy.compareSnapshot("home-11");
+    cy.compareSnapshot("home-12");
+    cy.compareSnapshot("home-13");
+    cy.compareSnapshot("home-14");
+    cy.compareSnapshot("home-15");
+    cy.compareSnapshot("home-16");
+    cy.compareSnapshot("home-17");
+    cy.compareSnapshot("home-18");
+    cy.compareSnapshot("home-19");
+    cy.compareSnapshot("home-20");
+    cy.compareSnapshot("home-21");
+    cy.compareSnapshot("home-22");
+    cy.compareSnapshot("home-23");
+    cy.compareSnapshot("home-24");
+    cy.compareSnapshot("home-25");
+    cy.compareSnapshot("home-26");
+    cy.compareSnapshot("home-27");
+    cy.compareSnapshot("home-28");
+    cy.compareSnapshot("home-29");
+    cy.compareSnapshot("home-30");
+    cy.compareSnapshot("home-31");
+    cy.compareSnapshot("home-32");
+    cy.compareSnapshot("home-33");
+    cy.compareSnapshot("home-34");
+    cy.compareSnapshot("home-35");
+    cy.compareSnapshot("home-36");
+    cy.compareSnapshot("home-37");
+    cy.compareSnapshot("home-38");
+    cy.compareSnapshot("home-39");
+    cy.compareSnapshot("home-40");
+    cy.compareSnapshot("home-41");
+    cy.compareSnapshot("home-42");
+    cy.compareSnapshot("home-43");
+    cy.compareSnapshot("home-44");
+    cy.compareSnapshot("home-45");
+    cy.compareSnapshot("home-46");
+    cy.compareSnapshot("home-47");
+    cy.compareSnapshot("home-48");
+    cy.compareSnapshot("home-49");
+    cy.compareSnapshot("home-50");
   });
 
   it("Accepts a new todo", function () {
@@ -84,7 +84,25 @@ describe("TodoMVC", function () {
   });
 });
 
-// curl -X GET https://circleci.com/api/v2/project/circleci/e0574693-70fe-4eea-9863-707b3adf2daf/7e40226a-52c1-4683-aac4-d0b7d5107755/23/artifacts \
+// curl -X GET https://circleci.com/api/v2/project/circleci/UhkTUvo4ZbS7cgD3wDqaei/GbDbvf1J4wtqsiRrp5B19N/24/artifacts \
+// --header "Content-Type: application/json" \
+// --header "Accept: application/json" \
+// --header "Circle-Token: $CIRCLE_TOKEN"
+
+// curl -X GET https://circleci.com/api/v2/project/circleci/e0574693-70fe-4eea-9863-707b3adf2daf/7e40226a-52c1-4683-aac4-d0b7d5107755/24/artifacts \
+// --header "Content-Type: application/json" \
+// --header "Accept: application/json" \
+// --header "Circle-Token: $CIRCLE_TOKEN"
+
+// curl -X GET https://circleci.com/api/v2/me/collaborations \
+// --header "Content-Type: application/json" \
+// --header "Accept: application/json" \
+// --header "Circle-Token: $CIRCLE_TOKEN"
+// https://circleci.com/api/v2/project/circleci/UhkTUvo4ZbS7cgD3wDqaei/GbDbvf1J4wtqsiRrp5B19N/31/artifacts
+// // https://app.circleci.com/pipelines/circleci/UhkTUvo4ZbS7cgD3wDqaei/GbDbvf1J4wtqsiRrp5B19N/31/workflows/3817fa0d-8311-4334-a226-68fa14f83b56
+// https://circleci.com/api/v2/workflow/{id}
+
+// curl -X GET https://circleci.com/api/v2/workflow/3817fa0d-8311-4334-a226-68fa14f83b56/job \
 // --header "Content-Type: application/json" \
 // --header "Accept: application/json" \
 // --header "Circle-Token: $CIRCLE_TOKEN"
