@@ -84,7 +84,7 @@ describe("TodoMVC", function () {
   });
 });
 
-// curl -X GET https://circleci.com/api/v2/project/github/e0574693-70fe-4eea-9863-707b3adf2daf/7e40226a-52c1-4683-aac4-d0b7d5107755/18/artifacts \
+// curl -X GET https://circleci.com/api/v2/project/circleci/e0574693-70fe-4eea-9863-707b3adf2daf/7e40226a-52c1-4683-aac4-d0b7d5107755/23/artifacts \
 // --header "Content-Type: application/json" \
 // --header "Accept: application/json" \
 // --header "Circle-Token: $CIRCLE_TOKEN"
