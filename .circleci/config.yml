@@ -10,10 +10,7 @@ jobs:
     working_directory: ~/test-github-app
     steps:
       - checkout
-      - github-status/post_status:
-          state: pending
-          description: "Pending description"
-          context: "ci/circleci"
+
       - run:
           name: Install Dependencies and Required Libraries
           command: |
@@ -30,6 +27,10 @@ jobs:
               xauth \
               xvfb \
               curl
+      - github-status/post_status:
+          state: pending
+          description: "Pending description"
+          context: "ci/circleci"
       - run:
           name: Run Tests
           command: npm run test
