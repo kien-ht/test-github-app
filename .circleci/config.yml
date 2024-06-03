@@ -14,7 +14,7 @@ jobs:
           name: get github url
           command: |
             # Retrieve the GitHub repository URL
-            GIT_URL=$(git remote get-url origin)
+            GIT_URL=$(git ls-remote --get-url origin)
             echo "GitHub Repository URL: $GIT_URL"
 
             
