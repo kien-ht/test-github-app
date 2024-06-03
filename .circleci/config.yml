@@ -5,8 +5,11 @@ jobs:
     docker:
       - image: cypress/base:latest
     working_directory: ~/test-github-app
+    environment:
+      CIRCLE_COMPARE_URL: << pipeline.project.git_url >>/compare/<< pipeline.git.base_revision >>..<< pipeline.git.revision >>
     steps:
       - checkout
+      - run: echo "This is pipeline ID: ${{ env.pipeline.id }}"
       - run:
           name: Print CircleCI Standard Variables
           command: |
