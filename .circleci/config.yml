@@ -1,57 +1,17 @@
 version: 2.1
 
+orbs:
+  github-status: samsalisbury/github-status@0.0.2
+
 jobs:
   cypressImageDiff:
     docker:
       - image: cypress/base:latest
     working_directory: ~/test-github-app
-    environment:
-      CIRCLE_COMPARE_URL: << pipeline.project.git_url >>/compare/<< pipeline.git.base_revision >>..<< pipeline.git.revision >>
     steps:
       - checkout
-      - run: echo "This is pipeline ID: ${{ env.pipeline.id }}"
-      - run:
-          name: Print CircleCI Standard Variables
-          command: |
-            echo "CI: $CI"
-            echo "CIRCLECI: $CIRCLECI"
-            echo "CIRCLE_BRANCH: $CIRCLE_BRANCH"
-            echo "CIRCLE_BUILD_NUM: $CIRCLE_BUILD_NUM"
-            echo "CIRCLE_BUILD_URL: $CIRCLE_BUILD_URL"
-            echo "CIRCLE_JOB: $CIRCLE_JOB"
-            echo "CIRCLE_NODE_INDEX: $CIRCLE_NODE_INDEX"
-            echo "CIRCLE_NODE_TOTAL: $CIRCLE_NODE_TOTAL"
-            echo "CIRCLE_PR_NUMBER: $CIRCLE_PR_NUMBER"
-            echo "CIRCLE_PR_REPONAME: $CIRCLE_PR_REPONAME"
-            echo "CIRCLE_PR_USERNAME: $CIRCLE_PR_USERNAME"
-            echo "CIRCLE_PREVIOUS_BUILD_NUM: $CIRCLE_PREVIOUS_BUILD_NUM"
-            echo "CIRCLE_PROJECT_REPONAME: $CIRCLE_PROJECT_REPONAME"
-            echo "CIRCLE_PROJECT_USERNAME: $CIRCLE_PROJECT_USERNAME"
-            echo "CIRCLE_PULL_REQUEST: $CIRCLE_PULL_REQUEST"
-            echo "CIRCLE_PULL_REQUESTS: $CIRCLE_PULL_REQUESTS"
-            echo "CIRCLE_REPOSITORY_URL: $CIRCLE_REPOSITORY_URL"
-            echo "CIRCLE_SHA1: $CIRCLE_SHA1"
-            echo "CIRCLE_TAG: $CIRCLE_TAG"
-            echo "CIRCLE_USERNAME: $CIRCLE_USERNAME"
-            echo "CIRCLE_WORKFLOW_ID: $CIRCLE_WORKFLOW_ID"
-            echo "CIRCLE_WORKFLOW_WORKSPACE_ID: $CIRCLE_WORKFLOW_WORKSPACE_ID"
-            echo "CIRCLE_WORKING_DIRECTORY: $CIRCLE_WORKING_DIRECTORY"
-
-      - run:
-          name: Print Pipeline Variables
-          command: |
-            echo "pipeline.id: ${{ pipeline.id }}"
-            echo "pipeline.number: ${{ pipeline.number }}"
-            echo "pipeline.project.git_url: ${{ pipeline.project.git_url }}"
-            echo "pipeline.project.type: ${{ pipeline.project.type }}"
-            echo "pipeline.git.tag: ${{ pipeline.git.tag }}"
-            echo "pipeline.git.branch: ${{ pipeline.git.branch }}"
-            echo "pipeline.git.revision: ${{ pipeline.git.revision }}"
-            echo "pipeline.git.base_revision: ${{ pipeline.git.base_revision }}"
-            echo "pipeline.in_setup: ${{ pipeline.in_setup }}"
-            echo "pipeline.trigger_source: ${{ pipeline.trigger_source }}"
-            echo "pipeline.schedule.name: ${{ pipeline.schedule.name }}"
-            echo "pipeline.schedule.id: ${{ pipeline.schedule.id }}"
+      - pending:
+          description: kevin
       - run:
           name: Install Dependencies and Required Libraries
           command: |
