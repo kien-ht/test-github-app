@@ -14,8 +14,9 @@ jobs:
           name: get github url
           command: |
             # Retrieve the GitHub repository URL
-            GIT_URL=$(git config --get remote.origin.url)
+            GIT_URL=$(git remote get-url origin)
             echo "GitHub Repository URL: $GIT_URL"
+
             
       - run:
           name: Install Dependencies and Required Libraries
