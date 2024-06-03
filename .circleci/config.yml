@@ -40,7 +40,7 @@ jobs:
       - store_artifacts:
           path: cypress-image-diff-html-report
 
-- run:
+      - run:
           name: Set Success Status
           when: on_success
           command: |
@@ -61,7 +61,7 @@ jobs:
               }
             '
             echo $BODY | curl -u $GITHUB_STATUS_USER:$GITHUB_STATUS_TOKEN -XPOST -d@- $URL
-            
+
 workflows:
   version: 2
   test-circle:
