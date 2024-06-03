@@ -1,7 +1,7 @@
 version: 2.1
 
-orbs:
-  github-status: samsalisbury/github-status@0.0.2
+# orbs:
+#   github-status: samsalisbury/github-status@0.0.2
 
 jobs:
   cypressImageDiff:
@@ -11,11 +11,11 @@ jobs:
     steps:
       - checkout
       
-      - github-status/pending:
-          context: "ci/circleci"
-          description: "Custom"
-          state: "pending"
-          target_url: "https://your-build-url.com"
+      # - github-status/pending:
+      #     context: "ci/circleci"
+      #     description: "Custom"
+      #     state: "pending"
+      #     target_url: "https://your-build-url.com"
           
       - run:
           name: Install Dependencies and Required Libraries
@@ -40,7 +40,28 @@ jobs:
       - store_artifacts:
           path: cypress-image-diff-html-report
 
-
+- run:
+          name: Set Success Status
+          when: on_success
+          command: |
+            set -euo pipefail
+            API=https://api.github.com
+            USER=$CIRCLE_PROJECT_USERNAME
+            REPO=$CIRCLE_PROJECT_REPONAME
+            SHA=$CIRCLE_SHA1
+            CONTEXT="ci/circleci"
+            DESCRIPTION="Custom: Success"
+            URL=$API/repos/$USER/$REPO/statuses/$SHA
+            BODY='
+              {
+                "state": "success",
+                "target_url": "'"$CIRCLE_BUILD_URL"'",
+                "description": "'"$DESCRIPTION"'",
+                "context": "'"$CONTEXT"'"
+              }
+            '
+            echo $BODY | curl -u $GITHUB_STATUS_USER:$GITHUB_STATUS_TOKEN -XPOST -d@- $URL
+            
 workflows:
   version: 2
   test-circle:
