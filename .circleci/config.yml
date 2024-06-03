@@ -33,11 +33,11 @@ jobs:
       - store_artifacts:
           path: cypress-image-diff-html-report
 
-      - github-status/pending:
-          context: "ci/circleci"
-          description: "Custom"
-          state: "pending"
-          target_url: "https://your-build-url.com"
+      # - github-status/pending:
+      #     context: "ci/circleci"
+      #     description: "Custom"
+      #     state: "pending"
+      #     target_url: "https://your-build-url.com"
 
 workflows:
   version: 2
