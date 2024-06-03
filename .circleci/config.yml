@@ -1,7 +1,7 @@
 version: 2.1
 
-# orbs:
-#   github-status: samsalisbury/github-status@0.0.2
+orbs:
+  github-status: samsalisbury/github-status@0.0.2
 
 jobs:
   cypressImageDiff:
@@ -10,6 +10,13 @@ jobs:
     working_directory: ~/test-github-app
     steps:
       - checkout
+      
+      - github-status/pending:
+          context: "ci/circleci"
+          description: "Custom"
+          state: "pending"
+          target_url: "https://your-build-url.com"
+          
       - run:
           name: Install Dependencies and Required Libraries
           command: |
@@ -33,11 +40,6 @@ jobs:
       - store_artifacts:
           path: cypress-image-diff-html-report
 
-      # - github-status/pending:
-      #     context: "ci/circleci"
-      #     description: "Custom"
-      #     state: "pending"
-      #     target_url: "https://your-build-url.com"
 
 workflows:
   version: 2
