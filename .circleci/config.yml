@@ -37,8 +37,8 @@ jobs:
           command: |
             set -euo pipefail
             API=https://api.github.com
-            USER=$CIRCLE_PROJECT_USERNAME
-            REPO=$CIRCLE_PROJECT_REPONAME
+            USER=$(echo $CIRCLE_REPOSITORY_URL | cut -d'/' -f4)
+            REPO=$(echo $CIRCLE_REPOSITORY_URL | cut -d'/' -f5)
             SHA=$CIRCLE_SHA1
             CONTEXT="ci/circleci"
             DESCRIPTION="Custom: Success"
