@@ -5,6 +5,14 @@ jobs:
     docker:
       - image: cypress/base:latest
     working_directory: ~/test-github-app
+    environment:
+      CIRCLE_COMPARE_URL: "<< pipeline.project.git_url >>/compare/<< pipeline.git.base_revision >>..<< pipeline.git.revision >>"
+    steps:
+      - run: echo "This is pipeline ID: << pipeline.id >>"
+      - run: echo "pipeline.project.git_url: << pipeline.project.git_url >>"
+      - run: echo "pipeline.git.base_revision: << pipeline.git.base_revision >>"
+      - run: echo "pipeline.git.revision: << pipeline.git.revision >>"
+      - run: echo "CIRCLE_COMPARE_URL: $CIRCLE_COMPARE_URL"
     steps:
       - checkout
       - run:
