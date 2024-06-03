@@ -10,7 +10,13 @@ jobs:
     working_directory: ~/test-github-app
     steps:
       - checkout
-
+      - run:
+          name: get github url
+          command: |
+            # Retrieve the GitHub repository URL
+            GIT_URL=$(git config --get remote.origin.url)
+            echo "GitHub Repository URL: $GIT_URL"
+            
       - run:
           name: Install Dependencies and Required Libraries
           command: |
