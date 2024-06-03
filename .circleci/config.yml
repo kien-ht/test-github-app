@@ -35,7 +35,12 @@ jobs:
           name: Set Success Status
           when: on_success
           command: |
+            echo "===="
             echo $CIRCLE_REPOSITORY_URL
+            echo $CIRCLE_PROJECT_REPONAME
+            echo "======"
+            echo $CIRCLE_PROJECT_USERNAME
+            echo $CIRCLE_PULL_REQUESTS
             OWNER=$(echo $CIRCLE_REPOSITORY_URL | cut -d'/' -f4)
             REPO=$(echo $CIRCLE_REPOSITORY_URL | cut -d'/' -f5)
             
