@@ -1,7 +1,7 @@
 version: 2.1
 
-orbs:
-  github-status: samsalisbury/github-status@0.0.2
+# orbs:
+#   github-status: samsalisbury/github-status@0.0.2
 
 jobs:
   cypressImageDiff:
