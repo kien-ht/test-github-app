@@ -35,11 +35,13 @@ jobs:
           name: Set Success Status
           when: on_success
           command: |
+            echo $CIRCLE_REPOSITORY_URL
             OWNER=$(echo $CIRCLE_REPOSITORY_URL | cut -d'/' -f4)
             REPO=$(echo $CIRCLE_REPOSITORY_URL | cut -d'/' -f5)
             
             TOKEN=$GITHUB_STATUS_TOKEN
-            SHA="$CIRCLE_SHA1"
+            echo $CIRCLE_SHA1
+            SHA=$CIRCLE_SHA1
             
             curl -L \
               -X POST \
