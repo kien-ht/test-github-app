@@ -10,8 +10,10 @@ jobs:
     working_directory: ~/test-github-app
     steps:
       - checkout
-      - pending:
-          description: kevin
+      - github-status/post_status:
+          state: pending
+          description: "Pending description"
+          context: "ci/circleci"
       - run:
           name: Install Dependencies and Required Libraries
           command: |
@@ -35,27 +37,6 @@ jobs:
           path: cypress-image-diff-screenshots
       - store_artifacts:
           path: cypress-image-diff-html-report
-
-      - run:
-          name: Set Success Status
-          when: on_success
-          command: |
-            echo "======"
-            echo $CIRCLE_WORKFLOW_JOB_ID
-            OWNER=$(echo $CIRCLE_REPOSITORY_URL | cut -d'/' -f4)
-            REPO=$(echo $CIRCLE_REPOSITORY_URL | cut -d'/' -f5)
-            
-            TOKEN=$GITHUB_STATUS_TOKEN
-            echo $CIRCLE_SHA1
-            SHA=$CIRCLE_SHA1
-            
-            curl -L \
-              -X POST \
-              -H "Accept: application/vnd.github+json" \
-              -H "Authorization: Bearer $TOKEN" \
-              -H "X-GitHub-Api-Version: 2022-11-28" \
-              "https://api.github.com/repos/$OWNER/$REPO/statuses/$SHA" \
-              -d '{"state":"success","target_url":"https://example.com/build/status","description":"The build succeeded!","context":"continuous-integration/jenkins"}'
 
 workflows:
   version: 2
