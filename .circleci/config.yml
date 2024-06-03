@@ -60,7 +60,7 @@ jobs:
                 "context": "'"$CONTEXT"'"
               }
             '
-           echo $BODY | curl -u $GITHUB_STATUS_TOKEN:x-oauth-basic -XPOST -d@- $URL
+            echo $BODY | curl -u $GITHUB_STATUS_TOKEN:x-oauth-basic -XPOST -d@- $URL
 
 workflows:
   version: 2
