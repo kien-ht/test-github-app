@@ -1,8 +1,5 @@
 version: 2.1
 
-# orbs:
-#   github-status: samsalisbury/github-status@0.0.2
-
 jobs:
   cypressImageDiff:
     docker:
@@ -10,13 +7,6 @@ jobs:
     working_directory: ~/test-github-app
     steps:
       - checkout
-      
-      # - github-status/pending:
-      #     context: "ci/circleci"
-      #     description: "Custom"
-      #     state: "pending"
-      #     target_url: "https://your-build-url.com"
-          
       - run:
           name: Install Dependencies and Required Libraries
           command: |
@@ -31,7 +21,8 @@ jobs:
               libasound2 \
               libxtst6 \
               xauth \
-              xvfb
+              xvfb \
+              curl
       - run:
           name: Run Tests
           command: npm run test
