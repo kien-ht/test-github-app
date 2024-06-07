@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs:
-  cypressImageDiff:
+  visual-test:
     docker:
       - image: cypress/base:latest
     working_directory: ~/test-github-app
@@ -32,6 +32,6 @@ jobs:
           path: cypress-image-diff-html-report
 workflows:
   version: 2
-  test-circle:
+  cypress-image-diff:
     jobs:
-      - cypressImageDiff
+      - visual-test
