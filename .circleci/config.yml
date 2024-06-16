@@ -4,6 +4,7 @@ jobs:
   visual-test:
     docker:
       - image: cypress/base:latest
+    # your actual working directory
     working_directory: ~/test-github-app
     steps:
       - checkout
@@ -21,17 +22,20 @@ jobs:
               libasound2 \
               libxtst6 \
               xauth \
-              xvfb \
-              curl
+              xvfb
       - run:
           name: Run Tests
+          # replace with your actual test command
           command: npm run test
       - store_artifacts:
+          # replace with your actual folder path if you have a custom one
           path: cypress-image-diff-screenshots
       - store_artifacts:
+          # replace with your actual folder path if you have a custom one
           path: cypress-image-diff-html-report
 workflows:
   version: 2
   cypress-image-diff:
     jobs:
+      # job name should NOT be modified
       - visual-test
